@@ -178,7 +178,7 @@ class TST(Module):
             self.W_P = nn.Linear(c_in, d_model) # Eq 1: projection of feature vectors onto a d-dim vector space
 
         # Positional encoding
-        W_pos = torch.empty((q_len, d_model), device=default_device())
+        W_pos = torch.empty((q_len, d_model))
         nn.init.uniform_(W_pos, -0.02, 0.02)
         self.W_pos = nn.Parameter(W_pos, requires_grad=True)
 
